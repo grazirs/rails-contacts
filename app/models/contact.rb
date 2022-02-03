@@ -3,15 +3,21 @@ class Contact < ApplicationRecord
   has_many :phones
 
   validates :name, presence: true
-  validates :birth_date, format: { with: /^\d{2}\/\d{2}\/\d{4}$/ }
-  validate :validate_unique_name
+  validate :validate_birth_date
+  validate :validate_unique_contact
 
   private
 
-  def validate_unique_name
+  def validate_unique_contact
     contact = Contact.find_by(user_id: user_id, name: name)
     if contact != nil
-      errors.add(:name, "Name already exists!")
+      errors.add(:name, "Contact already exists for this user!")
     end
+  end
+
+  def validate_birth_date
+    if !birth_date.respond_to?(:strftime)
+      errors.add(:birth_date, "Invalid date format!")
+    end 
   end
 end
