@@ -1,0 +1,11 @@
+one:
+  number: 1234567899
+  phone_type: home
+  main_phone: false
+  contact_id: 1
+
+two:
+  number: 1234567889
+  phone_type: work
+  main_phone: false
+  contact_id: 2
