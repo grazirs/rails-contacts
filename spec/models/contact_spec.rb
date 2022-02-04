@@ -21,7 +21,12 @@ RSpec.describe Contact, type: :model do
 
   describe "two contacts with the same name and same user" do
     it 'should not create a new contact' do
-      expect { Contact.create!(name: 'mark', birth_date: '2022-02-02', user_id: 1  ) }.to raise_error(ActiveRecord::RecordInvalid)
+      user1 = User.find_by(id: 1)
+
+      expect {
+        Contact.create name: 'Maëlie', user: user1, birth_date:'22/11/1111'
+        Contact.create name: 'Maëlie', user: user1, birth_date:'22/11/2222'
+      }.to change(Contact, :count).by(1)
     end
   end
 

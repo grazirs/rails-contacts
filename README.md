@@ -11,4 +11,4 @@ phones, but without creating the controller and view, just the model.
 - To open the console 
 ``` bin/rails console ```
 - To run the tests 
-``` rspec ```
+``` bundle exec rspec ```
