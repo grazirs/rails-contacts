@@ -1,24 +1,14 @@
-# README
+# Rails-Contacts
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- This project was carried out using the Ruby language, version 3.1.0 and Rails 6.1.4.4
+- The goal of this project is to build an application application to save user contact data containing multiple
+phones, but without creating the controller and view, just the model.
 
-Things you may want to cover:
+## Run
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- To run this project you will need to install the gems.
+``` bundle install ```.
+- To open the console 
+``` bin/rails console ```
+- To run the tests 
+``` rspec ```
