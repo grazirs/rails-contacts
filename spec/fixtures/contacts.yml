@@ -1,0 +1,11 @@
+contact1:
+  name: mark
+  birth_date: 2022-02-02
+  user: user1
+  id: 1
+
+contact2:
+  name: louis
+  birth_date: 2022-02-02
+  user: user2
+  id: 2
