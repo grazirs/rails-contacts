@@ -29,4 +29,12 @@ RSpec.describe Phone, type: :model do
       expect { Phone.create!(number: '1234567899', phone_type: 'home', main_phone: false, contact_id: 1  ) }.to raise_error(ActiveRecord::RecordInvalid)
     end
   end
+  describe "add a main phone" do
+    it "should update an existing main phone" do
+      phone1 = Phone.create!(number: '1233567889', phone_type: 'home', main_phone: true, contact_id:1)
+      phone2 = Phone.create!(number: '4563567889', phone_type: 'home', main_phone: true, contact_id:1)
+      main_phones = Phone.where(main_phone: true)
+      expect(main_phones.size).to eq(1)
+    end
+  end
 end

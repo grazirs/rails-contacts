@@ -5,6 +5,7 @@ RSpec.describe Contact, type: :model do
 
   describe "contacts validations " do
     it 'create a valid contact' do
+      user1 = User.find_by(id: 1)
       contact = Contact.new(name: 'contact1', birth_date:'22/11/1111', user_id:1)
       expect(contact).to be_valid
     end
