@@ -1,17 +1,43 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-<% @users.each do |user| %>
-  <p><%= user.name %></p>
-  <p><%= user.bio %></p>
-  <p><%= user.age %></p>
-  <p><%= user.contacts.count %></p>
+<body>
+  <div class="container">
+    <h1 class="container__title">Users List</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Photo</th>
+          <th>Name</th>
+          <th>Contacts</th>
+          <th>Phones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id%></td>
+            <td><img src="https://randomuser.me/api/portraits/thumb/<%= user.id%2 == 0?'women':'men'%>/<%= user.id%>.jpg"/></td>
+            <td><%= link_to user.name, user_path(user.id) %></td>
+            <td><%= user.contacts.count %></td>
+            <td><%= user.total_phones %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <button class="button button--static"><%= link_to "New User", users_new_path%></td></button>
+  </div>
+</body>
 
-<% 
-  phones = 0
-  user.contacts.each do |contact|
-    phones += contact.phones.count 
-  end
-%>
-<p><%= phones%></p>
-----------------------------------------------
-<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

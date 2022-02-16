@@ -1,6 +1,5 @@
 class Phone < ApplicationRecord
   belongs_to :contact
-  before_create :update_existing_main_phone
   before_save :update_existing_main_phone
 
   validates :number, presence: true, format: { with: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/ },  uniqueness: { scope: :contact_id }
