@@ -21,9 +21,17 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find_by(id: params[:id])
   end
 
   def update
+    begin
+      user = User.find_by(id: params["id"])
+      user.update!(name:params["name"], age:params["age"], bio:params["bio"])
+      redirect_to user
+    rescue => exception
+      redirect_to controller: 'users', action: 'edit', id: params[:id]
+    end
   end
 
   def destroy
