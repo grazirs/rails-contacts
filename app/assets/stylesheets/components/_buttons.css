@@ -1,6 +1,4 @@
 .button {
-  width: 140px;
-  height: 50px;
   border-radius: 30px;
   border: none;
   color: var(--text-color);
@@ -10,17 +8,31 @@
   background-color: transparent;
   letter-spacing: var(--letter-spacing);
   cursor: pointer;
-  margin: var(--margin-sections);
+  margin: var(--margin-default);
+  display: flex;
+  justify-content: center;
+  padding: calc(var(--padding-default)*0.5);
 }
 
 .button--static {
   border: var(--button-primary) solid 2px;
+  width: 140px;
+  height: 50px; 
 }
 
 .button--static:hover {
   background: linear-gradient(90deg, var(--button-primary), var(--main-bg-color), var(--secondary-bg-color));
 }
 
-.buttons{
-  display: flex;
+.button--delete {
+  border: var(--button-delete) solid 2px;
+  background-color: var(--button-delete);
+  color: var(--primary-color);
+  width: 140px;
+  height: 50px; 
+}
+
+.button--delete:hover {
+  background:var(--button-delete-hover);
+  color: var(--primary-color);
 }

@@ -10,7 +10,8 @@
         </div>
       </div>
     </div>
-  <div class="buton">
-    <button class="button button--static"><%= link_to "Back", users_path%></td></button>
+  <div class="button">
+    <button class="button button--static"><%= link_to "Edit", edit_path %></button>
+    <%= button_to('Delete', destroy_path, method: "delete", remote: true, data: { confirm: 'Are you sure?', disable_with: 'deleting...' }, class: "button button--delete") %>
   </div>
 </div>
