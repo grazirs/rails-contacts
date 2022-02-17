@@ -1,0 +1,21 @@
+<body>
+  <div class="container">
+    <h1 class="container__title">New User</h1>
+    <div class="container__card">
+      <%= form_with url: users_create_path, method: :post, local: true, class:"container__form", id:"user_form" do %>
+        <div class="container__input">
+          <label for="">Name:</label>
+          <input name="name" type="text" class="input input--active" placeholder="Type your name here">
+
+          <label for="">Age:</label>
+          <input name="age" type="number" class="input input--active" placeholder="Type your age here">
+
+          <label for="">Bio:</label>
+          <input name="bio" type="text" class="input input--active" placeholder="Type your bio here">
+        </div>
+      <% end %>
+    </div>
+    <button form="user_form" type ="submit"class="button button--static">Save</td></button>
+  </div>
+  </div>
+</body>
