@@ -41,7 +41,6 @@ RSpec.describe "Users", type: :request do
       get users_new_path(User.find_by(id: 1))
       expect(response).to have_http_status(:success)
     end
-  end
 
   describe "POST /create" do
     it "should returns http success" do
