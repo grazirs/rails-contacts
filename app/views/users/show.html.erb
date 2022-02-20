@@ -4,14 +4,14 @@
     <div class="container__description">
       <img class="container__img"src="https://randomuser.me/api/portraits/<%= @user.id%2 == 0?'women':'men'%>/<%= @user.id%>.jpg"/>
         <div class="container__text">
-          <p>Name: <%= @user.name %></p>
-          <p>Bio: <%= @user.bio %></p>
-          <p>Age: <%= @user.age %></p>
+          <p id="name">Name: <%= @user.name %></p>
+          <p id="bio">Bio: <%= @user.bio %></p>
+          <p id="age">Age: <%= @user.age %></p>
         </div>
       </div>
     </div>
   <div class="button">
     <button class="button button--static"><%= link_to "Edit", edit_path %></button>
-    <%= button_to('Delete', destroy_path, method: "delete", remote: true, data: { confirm: 'Are you sure?', disable_with: 'deleting...' }, class: "button button--delete") %>
+    <button class="button button--delete"><%= link_to "Delete", destroy_path, data: { method: :delete, confirm: "Are you sure?"} %></button>
   </div>
 </div>
