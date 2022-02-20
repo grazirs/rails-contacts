@@ -41,7 +41,6 @@ RSpec.describe "Users", type: :request do
       get users_new_path(User.find_by(id: 1))
       expect(response).to have_http_status(:success)
     end
-  end
 
   describe "POST /create" do
     it "should returns http success" do
@@ -66,7 +65,6 @@ RSpec.describe "Users", type: :request do
       get edit_path(User.find_by(id: 1))
       expect(response).to have_http_status(:success)
     end
-  end
 
   describe "PATCH /update" do
     it "should redirect to show" do
@@ -75,7 +73,7 @@ RSpec.describe "Users", type: :request do
       patch users_update_path, params: {name: user.name, age: user.age, bio: user.bio, id: user.id} 
       expect(response).to redirect_to user_path(user)
     end
-
+    
     it "should update the user" do
       user = User.find_by(id: 1)
       user.name = "User8"
