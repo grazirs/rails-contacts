@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Users", type: :request do
 
   fixtures :users, :contacts, :phones
-
+  
   describe "GET /index" do
     it "should returns http success" do
       get users_path
@@ -35,5 +35,28 @@ RSpec.describe "Users", type: :request do
       assert_select "#age", text:"Age: "+user.age.to_s
     end
   end
-  
+
+  describe "GET /new" do
+    it "should returns http success" do
+      get users_new_path(User.find_by(id: 1))
+      expect(response).to have_http_status(:success)
+    end
+
+  describe "POST /create" do
+    it "should returns http success" do
+      post users_create_path(User.find_by(id: 1))
+      expect(response).to have_http_status(:success)
+    end
+
+    it "should redirect to user" do
+      post users_create_path, params: {name: "User6", age: 25, bio: "somewhere over the rainbow"}
+      expect(response).to redirect_to user_path(User.order("created_at").last)
+    end
+
+    it "should create a new user" do
+      expect{ 
+        post users_create_path, params: {name: "User7", age: 24, bio: "somewhere over the rainbow"} 
+      }.to change(User, :count).by(1)
+    end
+  end
 end
