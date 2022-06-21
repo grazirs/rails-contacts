@@ -1,0 +1,30 @@
+table {
+  border-collapse: collapse;
+  background-color: var(--primary-color);
+  text-align: center;
+  overflow: hidden;
+  font-size: var(--normal-font-size);
+  box-shadow: 0px 5px 10px var(--tertiary-bg-color);
+  border-radius: 8px;
+}
+  thead {
+    box-shadow: 0px 5px 10px var(--tertiary-bg-color);
+  }
+
+  th {
+    padding: var(--padding-default);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  td {
+    padding: calc(var(--padding-default)*0.4);
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--tertiary-bg-color);
+  }
+
+  td img{
+    border-radius: 50%;
+  }

@@ -1,15 +1,11 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import 'settings/_settings.css';
+@import 'generic/_box-sizing.css';
+@import 'generic/_resets.css';
+@import 'elements/_body.css';
+@import 'elements/_labels.css';
+@import 'elements/_links.css';
+@import 'elements/_lists.css';
+@import 'elements/_tables.css';
+@import 'components/_buttons.css';
+@import 'components/_container.css';
+@import 'components/_inputs.css';
