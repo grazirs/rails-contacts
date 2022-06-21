@@ -1,1 +1,16 @@
-
+<div class="container">
+  <h1 class="container__title">User Profile</h1>
+  <div class="container__card">
+    <div class="container__description">
+      <img class="container__img"src="https://randomuser.me/api/portraits/<%= @user.id%2 == 0?'women':'men'%>/<%= @user.id%>.jpg"/>
+        <div class="container__text">
+          <p id="name">Name: <%= @user.name %></p>
+          <p id="bio">Bio: <%= @user.bio %></p>
+          <p id="age">Age: <%= @user.age %></p>
+        </div>
+      </div>
+    </div>
+  <div class="buton">
+    <button class="button button--static"><%= link_to "Back", users_path%></td></button>
+  </div>
+</div>
