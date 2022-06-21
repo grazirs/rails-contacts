@@ -28,12 +28,15 @@ class UsersController < ApplicationController
     begin
       user = User.find_by(id: params["id"])
       user.update!(name:params["name"], age:params["age"], bio:params["bio"])
-      redirect_to user
+      redirect_to user, notice: "User has been updated"
     rescue => exception
       redirect_to controller: 'users', action: 'edit', id: params[:id]
     end
   end
 
   def destroy
+    user = User.find_by(id: params["id"])
+    user.destroy
+    redirect_to user, notice: "User has been deleted"
   end
 end

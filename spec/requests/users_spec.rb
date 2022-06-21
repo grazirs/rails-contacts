@@ -59,7 +59,13 @@ RSpec.describe "Users", type: :request do
       }.to change(User, :count).by(1)
     end
   end
-  
+
+  describe "GET /edit" do
+    it "should returns http success" do
+      get edit_path(User.find_by(id: 1))
+      expect(response).to have_http_status(:success)
+    end
+
   describe "PATCH /update" do
     it "should redirect to show" do
       user = User.find_by(id: 1)
@@ -67,13 +73,22 @@ RSpec.describe "Users", type: :request do
       patch users_update_path, params: {name: user.name, age: user.age, bio: user.bio, id: user.id} 
       expect(response).to redirect_to user_path(user)
     end
-
+    
     it "should update the user" do
       user = User.find_by(id: 1)
       user.name = "User8"
       patch users_update_path, params: {name: user.name, age: user.age, bio: user.bio, id: user.id} 
       update_user = User.find_by(id: 1)
       expect(update_user.name).to eq("User8")
+    end
+  end
+
+  describe "DELETE /destroy" do
+    it "should delete the user and redirect to users_path" do
+      delete destroy_path(User.find_by(id: 1))
+      user = User.find_by(id: 1)
+      expect(user).to eq(nil)
+      expect(response).to redirect_to(users_path)
     end
   end
 end

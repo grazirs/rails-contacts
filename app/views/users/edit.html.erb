@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="container__title">Edit User</h1>
     <div class="container__card">
-      <%= form_with url: users_update_path, method: :put, local: true, class:"container__form", id:"user_form" do %>
+      <%= form_with url: users_update_path, method: :patch, local: true, class:"container__form", id:"user_form" do %>
         <div class="container__input">
           <input type="hidden" name="id" value="<%=@user.id%>"/>
           <label for="">Name:</label>
