@@ -1,7 +1,7 @@
 # Rails-Contacts
 
 - This project was carried out using the Ruby language, version 3.1.0 and Rails 6.1.4.4
-- The goal of this project is to build an MVC application to save user contact data containing multiple
+- The goal of this project is to build a MVC application to save user contact data containing multiple
 phones.
 - You can see, create, edit, save and delete a contact.
 
